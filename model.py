@@ -3,6 +3,18 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 import numpy as np
+
+# Hyperparameters
+learning_rate = 0.001
+gamma = 0.99
+epsilon = 1.0
+epsilon_min = 0.01
+epsilon_decay = 0.995
+batch_size = 64
+target_update_freq = 1000
+memory_size = 10000
+episodes = 1000
+
 class DQN:
     '''A simple DQN model for reinforcement learning'''
     def __init__(self, input_dim, output_dim):
